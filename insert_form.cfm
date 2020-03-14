@@ -15,8 +15,12 @@
             SELECT * FROM workoutTypes
         </cfquery>
         <cfdump var='#get_workouttypes#'>
-
-        <h2>Insert Data Form</h2>       
+        <cfquery datasource="YardMapper" name="listings">
+            SELECT * FROM workoutTypes WHERE isActive=1
+        </cfquery>
+        
+        <h2>Insert Data Form</h2>
+        
         <table>
             <form action="insert_action.cfm" method="post">
                 <label>Select Exercise Type</label>
@@ -28,7 +32,7 @@
                 </select>
                 <tr>
                     <td># of Reps:</td>
-                    <td><input type="text" name="reps"></td>
+                    <td><input type="text" name="workoutType"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>

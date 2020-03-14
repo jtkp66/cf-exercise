@@ -23,7 +23,8 @@
             SELECT * FROM workoutTypes WHERE isActive=1
         </cfquery>
         <div id="pageBody">    
-            <h1> Workout Types</h1> 
+            <h1> Workout Types</h1>
+              
               <cfif listings.recordCount EQ 0 >
                 <p>No exercises to display</p>
               <cfelse>
@@ -35,13 +36,14 @@
                             <td>#workoutType#</td>
                             <td>#dateFormat(createdOn, "mmm dd yyyy")#</td>
                             <td><a href="update_form.cfm?workoutTypeId=#listings.workoutTypeId#">Edit</a></td>
-                            <td><a href="isactive_form.cfm?workoutTypeId=#listings.workoutTypeId#">Deactivate</a></td>
+                            
                             <td><a href="delete_form.cfm?workoutTypeId=#listings.workoutTypeId#">Delete</a></td>
                         </tr>
                     </cfoutput>
                 </table>
               </cfif>
         </div>
+
         <h2>Insert Data Form</h2>    
         <table>
             <form action="insert_action.cfm" method="post">
