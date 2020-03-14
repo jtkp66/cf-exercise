@@ -36,7 +36,7 @@
                             <td>#workoutType#</td>
                             <td>#dateFormat(createdOn, "mmm dd yyyy")#</td>
                             <td><a href="update_form.cfm?workoutTypeId=#listings.workoutTypeId#">Edit</a></td>
-                            
+                            <td><a href="isactive_form.cfm?workoutTypeId=#listings.workoutTypeId#">Deactivate</a></td>
                             <td><a href="delete_form.cfm?workoutTypeId=#listings.workoutTypeId#">Delete</a></td>
                         </tr>
                     </cfoutput>
